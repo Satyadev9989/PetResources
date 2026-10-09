@@ -1,0 +1,220 @@
+/* Custom Styles & Modern Enhancements for PetCare Hub - Baby Pink Aesthetic */
+
+/* Google Fonts imported in HTML, font family standard */
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: #1e293b; /* dark slate text for high readability */
+  background-color: #fff7fa; /* ultra-soft baby pink cream */
+}
+
+/* Custom Scrollbar in Baby Pink & Rose */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #fff0f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #f9a8d4; /* pastel baby pink */
+  border-radius: 9999px;
+  border: 2px solid #fff0f5;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f472b6; /* vibrant sweet pink */
+}
+
+/* Glassmorphism Sticky Nav with Baby Pink Sheen */
+.glass-nav {
+  background: rgba(255, 248, 250, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(251, 207, 232, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(244, 114, 182, 0.05);
+}
+
+/* Smooth Tab Transitions */
+.view-panel {
+  display: none;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+.view-panel.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Toast Notification Styling */
+.toast-container {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  pointer-events: none;
+}
+.toast-card {
+  pointer-events: auto;
+  min-width: 300px;
+  max-width: 420px;
+  box-shadow: 0 12px 28px -5px rgba(244, 114, 182, 0.18), 0 8px 12px -6px rgba(0, 0, 0, 0.06);
+  border-radius: 1rem;
+  overflow: hidden;
+  animation: toastSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.toast-card.toast-hiding {
+  animation: toastSlideOut 0.25s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes toastSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+
+/* Modal Overlay & Animation */
+.modal-overlay {
+  background: rgba(36, 20, 41, 0.55);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+.modal-overlay.hidden {
+  display: none !important;
+}
+.modal-overlay:not(.hidden) {
+  display: flex !important;
+}
+.modal-dialog {
+  animation: modalScaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes modalScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Subtle badge pulse in sweet pink */
+.badge-pulse {
+  position: relative;
+}
+.badge-pulse::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 9999px;
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+}
+
+/* Cute Pet Styling Enhancements & Shadows */
+.cute-card {
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cute-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(244, 63, 117, 0.16), 0 8px 16px -6px rgba(236, 72, 153, 0.08);
+}
+
+.cute-avatar-frame {
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.cute-avatar-frame:hover {
+  transform: scale(1.06) rotate(1.5deg);
+  box-shadow: 0 8px 20px -4px rgba(244, 114, 182, 0.3);
+}
+
+.preset-avatar-option {
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.preset-avatar-option:hover {
+  transform: scale(1.1);
+}
+.preset-avatar-option.selected {
+  outline: 3px solid #f43f75; /* cute hot pink */
+  outline-offset: 2px;
+  transform: scale(1.08);
+}
+
+/* Dreamy Baby Pink & Pastel Blush Gradients */
+.cute-pastel-bg {
+  background: radial-gradient(circle at 10% 20%, rgba(254, 226, 236, 0.65) 0%, transparent 45%),
+              radial-gradient(circle at 90% 80%, rgba(253, 242, 248, 0.75) 0%, transparent 45%),
+              radial-gradient(circle at 50% 50%, rgba(255, 241, 245, 0.6) 0%, transparent 60%);
+}
+
+.cute-sparkle {
+  animation: cuteSparkle 3s ease-in-out infinite;
+}
+@keyframes cuteSparkle {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15) rotate(4deg);
+  }
+}
+
+/* Print Optimization for Vaccination Passports */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printableVaccineCard, #printableVaccineCard * {
+    visibility: visible;
+  }
+  #printableVaccineCard {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: white;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
